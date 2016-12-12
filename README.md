@@ -12,7 +12,6 @@ Development:
 
 Known Issues:
 	1) Calculator doesn't know how to accept negative numbers.
-	2) No catch for only one input or expressions without second operand.
 	
 Bug Reporting:
 	Additional bugs can be reported to info@victoradey.com

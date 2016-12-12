@@ -13,7 +13,6 @@ Development:
 Known Issues:
 	1) Calculator doesn't know how to accept negative numbers.
 	2) No catch for only one input or expressions without second operand.
-	3) Clear button toggles everytime it's clicked. Needs to function like an actual calculator's clear button.
 	
 Bug Reporting:
 	Additional bugs can be reported to info@victoradey.com

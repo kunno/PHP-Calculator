@@ -11,7 +11,7 @@ Development:
 	Developed on PHPStorm using PHP Interp 7.0.12
 
 Known Issues:
-	1) Calculator doesn't know how to accept negative numbers.
+	1) Calculator doesn't know how to accept non-positive numbers.
 	
 Bug Reporting:
 	Additional bugs can be reported to info@victoradey.com

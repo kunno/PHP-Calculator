@@ -6,14 +6,14 @@ var input = document.querySelector('#screen');
 var operators = ['+', '−', 'x', '÷', '^'];
 // Flag to track when decimal is added to screen
 var decimalAdded = false;
+// Retrieves the results div
+var results = document.querySelector('#results');
 
 
 // Clear button function to change text on click
 $('#clear').click(function() {
     // Finds clear button and checks it's text
-    if ($(this).find('span.clear').text() == 'C') {
-        $(this).find('span.clear').text('AC');
-    } else {
+    if ($(this).find('span.clear').text() == 'AC') {
         $(this).find('span.clear').text('C');
     }
 
@@ -21,8 +21,24 @@ $('#clear').click(function() {
 
 // Function to clear the screen
 function clearScreen() {
-    input.innerHTML = '';
-    decimalAdded = false;
+    if($('#clear').find('span.clear').text() == 'AC') {
+        input.innerHTML = '';
+        decimalAdded = false;
+    }
+}
+
+//Fixes bug that allows one or no operands to be evaluated upon first launch
+function resetInput() {
+    if (input.innerHTML.length == '21') {
+        input.innerHTML = '';
+    }
+}
+resetInput();
+
+// Function to change clear button text
+function changeClearText() {
+    $('#clear').find('span.clear').text('AC');
+
 }
 
 
@@ -64,11 +80,12 @@ for(var i = 0; i < keys.length; i++) {
 
 
             // Replace all instances of x and ÷ with * and / respectively.
-            equation = equation.replace(/x/g, '*').replace(/÷/g, '/').replace(/−/g, '-');
+            equation = equation.replace(/x/g, '*').replace(/÷/g, '/').replace
+            (/−/g, '-');
 
-            // Send equation
-
-            if(equation.length > 2) {
+            // Checks input length and sends equation if condition is met
+            // else user gets error
+            if(input.innerHTML.length > 2) {
                 sendEquation();
             }
             else {
@@ -81,15 +98,19 @@ for(var i = 0; i < keys.length; i++) {
             // Get the last character from the equation
             var lastChar = inputVal[inputVal.length - 1];
 
-            // Only add operator if input is not empty and there is no operator at the last
-            if(inputVal != '' && operators.indexOf(lastChar) == -1)
+            // Only add operator if input is not empty and there is no operator
+            // at the last entry
+            if(inputVal != '' && operators.indexOf(lastChar) == -1) {
                 input.innerHTML += btnVal;
+            }
 
             // Allow minus if the string is empty
-            else if(inputVal == '' && btnVal == '−')
+            else if(inputVal == '' && btnVal == '−') {
                 input.innerHTML += btnVal;
+            }
 
-            // Replace the last operator (if exists) with the newly pressed operator
+            // Replace the last operator (if exists) with the newly pressed
+            // operator
             if(operators.indexOf(lastChar) > -1 && inputVal.length > 1) {
                 input.innerHTML = inputVal.replace(/.$/, btnVal);
             }
@@ -102,12 +123,24 @@ for(var i = 0; i < keys.length; i++) {
             if(!decimalAdded) {
                 input.innerHTML += btnVal;
                 decimalAdded = true;
+                changeClearText();
             }
         }
 
         // Add any other key pressed.
         else {
-            input.innerHTML += btnVal;
+            // Check if results div has been generated. Remove it if present.
+            if(results === null) {
+                input.innerHTML += btnVal;
+
+            }
+            else {
+                results.remove();
+                resetInput();
+                input.innerHTML += btnVal;
+
+            }
+            changeClearText();
         }
 
         // Prevent page jumps on key press

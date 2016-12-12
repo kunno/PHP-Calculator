@@ -43,6 +43,12 @@ html {
     box-shadow: 0 4px #517fa4, 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Sets font for the displayed result */
+#results {
+    font-size: 17px;
+
+}
+
 /* Setting calc screen design and font */
 #screen {
     height: 90px;

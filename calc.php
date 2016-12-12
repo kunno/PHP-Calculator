@@ -225,9 +225,9 @@ function postfix_eval($postfix, $variables = array()) {
 if (isset($_GET['equate'])) {
     $expression = $_GET['equate'];
     $postfix = postfix($expression);
-    echo($expression);
+    echo('<div id="results">'.$expression);
     echo('<br />'.'Postfix: '.implode(' ', $postfix).'<br />');
-    echo('= '.postfix_eval($postfix, array('size' => 121)));
+    echo('= '.postfix_eval($postfix, array('size' => 121)).'</div>');
 }
 else {
     echo $_GET['equate'];

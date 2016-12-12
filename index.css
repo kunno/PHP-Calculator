@@ -1,0 +1,149 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Better text styling */
+    font: bold 30px Georgia, serif;
+}
+
+/* Sets the background */
+body {
+    background-color: transparent !important;
+}
+
+/* Sets the background, prevents selection of text on page */
+html {
+    height: 100%;
+    background: #ffffff url("bg.jpg") center no-repeat;
+    background-size: cover;
+    /* iOS Safari */
+    -webkit-touch-callout: none;
+    /* Chrome/Safari/Opera */
+    -webkit-user-select: none;
+    /* Konqueror */
+    -khtml-user-select: none;
+    /* Firefox */
+    -moz-user-select: none;
+    /* Internet Explorer/Edge */
+    -ms-user-select: none;
+    /* Non-prefixed version, currently not supported by any browser */
+    user-select: none;
+}
+
+/* Using box shadows to create calc body */
+#calc {
+    width: 325px;
+    height: auto;
+    margin: 100px auto;
+    padding: 20px 20px 20px;
+    background: #517fa4;
+    background: linear-gradient(#517fa4, #243949);
+    border-radius: 3px;
+    box-shadow: 0 4px #517fa4, 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Setting calc screen design and font */
+#screen {
+    height: 90px;
+    width: 350px;
+    position: relative;
+    left: -20%;
+    padding: 0 10px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    box-shadow: inset 0 4px rgba(0, 0, 0, 0.2);
+    font-size: 17px;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    text-align: right;
+    letter-spacing: 1px;
+}
+
+/* Clear overflows */
+#keys,
+.top-row {
+    overflow: hidden;
+}
+
+/* Setting keypad height */
+#keys {
+    height: 250px;
+}
+
+/* Sets design for the keys */
+#keys span {
+    float: left;
+    position: relative;
+    top: 12px;
+    cursor: pointer;
+    width: 66px;
+    height: 36px;
+    background: #000;
+    border-radius: 3px;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+    margin: 0 7px 11px 0;
+    color: #888;
+    line-height: 36px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+/* Designs the operator keys */
+#keys span.operator {
+    background: #ee7600;
+    color: #fff;
+    margin-right: 0;
+}
+
+/* Designs the eval key */
+#keys span.eval {
+    background: #f1ff92;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+    color: #888e5f;
+}
+
+/* Designs the clear key */
+#clear span.clear {
+    background: #ff6961;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+/* Hover effects for num keys */
+#num-keys span:hover {
+    background: #9c89f6;
+    box-shadow: 0 4px #6b54d3;
+    color: white;
+}
+
+/* Hover effects for eval key */
+#keys span.eval:hover {
+    background: #abb850;
+    box-shadow: 0 4px #717a33;
+    color: #ffffff;
+}
+
+/* Hover effects for clear key */
+#clear span.clear:hover {
+    background: #f68991;
+    box-shadow: 0 4px #d3545d;
+}
+
+/* Key press effects for num keys  */
+#num-keys span:active {
+    box-shadow: 0 0 #6b54d3;
+    top: 4px;
+}
+
+/* Key press effects for eval key */
+#keys span.eval:active {
+    box-shadow: 0 0 #717a33;
+    top: 4px;
+}
+
+/* Key press effect for clear key */
+#clear span.clear:active {
+    top: 4px;
+    box-shadow: 0 0 #d3545d;
+}

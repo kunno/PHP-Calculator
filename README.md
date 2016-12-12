@@ -5,7 +5,7 @@ This is a project that emulates a calculator taking infix input and expressing t
 HOW TO USE:
 	Download or submit pull request for repository, configure your localhost server, and open the index.php file to run
 	program. 
-	For the live version, visit: victoradey.com/calculator
+	For the live version, visit: http://victoradey.com/calculator
 
 Development: 
 	Developed on PHPStorm using PHP Interp 7.0.12

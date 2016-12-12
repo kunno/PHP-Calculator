@@ -1,5 +1,5 @@
 # PHP-Calculator
-This repository contains v1.0 release of the PHP-Calculator
+This repository contains v1.2 release of the PHP-Calculator
 This is a project that emulates a calculator taking infix input and expressing the result as well as the postfix order.
 
 HOW TO USE:
